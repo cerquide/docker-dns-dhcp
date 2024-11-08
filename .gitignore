@@ -1,3 +1,3 @@
-static_hosts
-ad.list
-dnsmasq.conf
+# static_hosts
+# ad.list
+# dnsmasq.conf

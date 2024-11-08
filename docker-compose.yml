@@ -8,14 +8,13 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - HTTP_USER=foo
-      - HTTP_PASS=bar
-    logging:
-      options:
-        max-size: 100m
+      - HTTP_USER=cerquide
+      - HTTP_PASS=elena666
     volumes:
+      - ./dnsmasq.leases:/var/lib/misc/dnsmasq.leases
       - ./dnsmasq.conf:/etc/dnsmasq.conf
       - ./dnsmasq.log:/var/log/dnsmasq.log
       - ./static_hosts:/etc/hosts
       - ./ad.list:/etc/ad.list
       - /etc/localtime:/etc/localtime:ro
+
