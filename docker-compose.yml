@@ -17,4 +17,9 @@ services:
       - ./static_hosts:/etc/hosts
       - ./ad.list:/etc/ad.list
       - /etc/localtime:/etc/localtime:ro
+  restarter:
+    image: docker:cli
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
+    command: ["/bin/sh", "-c", "while true; do sleep 86400; docker restart dnsmasq; done"]
+    restart: unless-stopped
 
